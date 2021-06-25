@@ -1,4 +1,4 @@
-/* contrib/uuid-ossp/uuid-ossp--1.1.sql */
+/* contrib/uuid-ossp/uuid-ossp--1.2.sql */
 
 -- complain if script is sourced in psql, rather than via CREATE EXTENSION
 \echo Use '''CREATE EXTENSION "uuid-ossp"''' to load this file. \quit
@@ -43,6 +43,11 @@ RETURNS uuid
 AS 'MODULE_PATHNAME', 'uuid_generate_v3'
 IMMUTABLE STRICT LANGUAGE C PARALLEL SAFE;
 
+CREATE FUNCTION uuid_generate_v3(namespace uuid, name bytea)
+RETURNS uuid
+AS 'MODULE_PATHNAME', 'uuid_generate_v3_bytea'
+IMMUTABLE STRICT LANGUAGE C PARALLEL SAFE;
+
 CREATE FUNCTION uuid_generate_v4()
 RETURNS uuid
 AS 'MODULE_PATHNAME', 'uuid_generate_v4'
@@ -51,4 +56,9 @@ VOLATILE STRICT LANGUAGE C PARALLEL SAFE;
 CREATE FUNCTION uuid_generate_v5(namespace uuid, name text)
 RETURNS uuid
 AS 'MODULE_PATHNAME', 'uuid_generate_v5'
+IMMUTABLE STRICT LANGUAGE C PARALLEL SAFE;
+
+CREATE FUNCTION uuid_generate_v5(namespace uuid, name bytea)
+RETURNS uuid
+AS 'MODULE_PATHNAME', 'uuid_generate_v5_bytea'
 IMMUTABLE STRICT LANGUAGE C PARALLEL SAFE;

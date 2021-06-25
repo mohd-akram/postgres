@@ -6,7 +6,7 @@ OBJS = \
 	uuid-ossp.o
 
 EXTENSION = uuid-ossp
-DATA = uuid-ossp--1.1.sql uuid-ossp--1.0--1.1.sql
+DATA = uuid-ossp--1.2.sql uuid-ossp--1.1.sql uuid-ossp--1.0--1.1.sql
 PGFILEDESC = "uuid-ossp - UUID generation"
 
 REGRESS = uuid_ossp
