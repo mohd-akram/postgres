@@ -67,7 +67,10 @@ SELECT uuid_node(uuid_generate_v1()) <> uuid_node(uuid_generate_v1mc());
 SELECT uuid_node(uuid_generate_v1mc()) <> uuid_node(uuid_generate_v1mc());
 
 SELECT uuid_generate_v3(uuid_ns_dns(), 'www.widgets.com');
+SELECT uuid_generate_v3(uuid_nil(), '\x00ABCDEF'::bytea);
+
 SELECT uuid_generate_v5(uuid_ns_dns(), 'www.widgets.com');
+SELECT uuid_generate_v5(uuid_nil(), '\x00ABCDEF'::bytea);
 
 SELECT uuid_version_bits(uuid_generate_v4()),
        uuid_reserved_bits(uuid_generate_v4());

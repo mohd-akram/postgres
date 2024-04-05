@@ -82,6 +82,7 @@
        <entry role="func_table_entry"><para role="func_signature">
         <indexterm><primary>uuid_generate_v3</primary></indexterm>
         <function>uuid_generate_v3</function> ( <parameter>namespace</parameter> <type>uuid</type>, <parameter>name</parameter> <type>text</type> )
+        <function>uuid_generate_v3</function> ( <parameter>namespace</parameter> <type>uuid</type>, <parameter>name</parameter> <type>bytea</type> )
         <returnvalue>uuid</returnvalue>
        </para>
        <para>
@@ -119,6 +120,7 @@ SELECT uuid_generate_v3(uuid_ns_url(), 'http://www.postgresql.org');
       <row>
        <entry role="func_table_entry"><para role="func_signature">
         <function>uuid_generate_v5</function> ( <parameter>namespace</parameter> <type>uuid</type>, <parameter>name</parameter> <type>text</type> )
+        <function>uuid_generate_v5</function> ( <parameter>namespace</parameter> <type>uuid</type>, <parameter>name</parameter> <type>bytea</type> )
         <returnvalue>uuid</returnvalue>
        </para>
        <para>
